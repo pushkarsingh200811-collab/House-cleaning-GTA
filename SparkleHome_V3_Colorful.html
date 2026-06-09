@@ -1,0 +1,827 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="America's Most Trusted Home Cleaning Service - SparkleHome provides professional, eco-friendly residential cleaning in major US cities.">
+    <title>SparkleHome Cleaning Services | Premium Home Cleaning</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Playfair+Display:wght@700&amp;display=swap');
+        
+        :root {
+            --primary: #06b6d4;
+            --secondary: #22c55e;
+        }
+        
+        .glass {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255,255,255,0.3);
+        }
+        
+        .hero-bg {
+            background: linear-gradient(rgba(8,15,30,0.72), rgba(6,78,59,0.55)), url('https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
+        }
+        
+        .nav-link {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .nav-link:hover {
+            color: #10b981;
+            transform: translateY(-2px);
+        }
+        
+        .service-card {
+            transition: all 0.4s cubic-bezier(0.4, 0.0, 0.2, 1);
+        }
+        
+        .service-card:hover {
+            transform: translateY(-15px) scale(1.03);
+            box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.25);
+        }
+        
+        .stat-number {
+            font-variant-numeric: tabular-nums;
+        }
+        
+        .before-after {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .slider {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            width: 4px;
+            height: 100%;
+            background: white;
+            cursor: ew-resize;
+            z-index: 10;
+            box-shadow: 0 0 10px rgba(0,0,0,0.5);
+        }
+        
+        footer {
+            background: linear-gradient(to bottom, #0f172a, #1e2937);
+        }
+    
+.stat-number{
+    text-shadow:0 0 25px rgba(255,255,255,.15);
+}
+.service-card{
+    border-radius:28px;
+}
+
+
+.popular-glow{
+ box-shadow:0 25px 60px rgba(236,72,153,.35);
+}
+</style>
+
+</head>
+<body class="bg-zinc-50 font-['Inter'] text-zinc-800">
+    <!-- NAVBAR -->
+    <nav class="bg-white/90 glass sticky top-0 z-50 border-b border-zinc-100">
+        <div class="max-w-7xl mx-auto px-6 py-5 flex items-center justify-between">
+            <div class="flex items-center gap-x-3">
+                <div class="w-10 h-10 bg-gradient-to-br from-sky-500 to-emerald-500 rounded-2xl flex items-center justify-center text-white font-bold text-2xl shadow-inner">✦</div>
+                <div>
+                    <span class="font-bold text-2xl tracking-tight text-zinc-900">SparkleHome</span>
+                </div>
+            </div>
+            
+            <div class="hidden md:flex items-center gap-x-8 text-sm font-medium">
+                <a href="#why" class="nav-link text-zinc-600 hover:text-emerald-600">Why Us</a>
+                <a href="#services" class="nav-link text-zinc-600 hover:text-emerald-600">Services</a>
+                <a href="#process" class="nav-link text-zinc-600 hover:text-emerald-600">How It Works</a>
+                <a href="#reviews" class="nav-link text-zinc-600 hover:text-emerald-600">Reviews</a>
+                <a href="#areas" class="nav-link text-zinc-600 hover:text-emerald-600">Areas</a>
+            </div>
+            
+            <div class="flex items-center gap-x-4">
+                <button onclick="showBookingModal()" 
+                        class="px-6 py-2.5 bg-emerald-600 hover:bg-emerald-700 text-white rounded-2xl font-semibold text-sm transition-all active:scale-95">
+                    Book Now
+                </button>
+                <button onclick="toggleMobileMenu()" 
+                        class="md:hidden w-10 h-10 flex items-center justify-center text-2xl">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t">
+            <div class="px-6 py-8 flex flex-col gap-y-6 text-lg">
+                <a href="#why" class="nav-link">Why Choose Us</a>
+                <a href="#services" class="nav-link">Our Services</a>
+                <a href="#process" class="nav-link">Our Process</a>
+                <a href="#reviews" class="nav-link">Testimonials</a>
+                <a href="#areas" class="nav-link">Service Areas</a>
+                <button onclick="showBookingModal()" 
+                        class="w-full py-4 bg-emerald-600 text-white rounded-3xl font-semibold">
+                    Get Free Quote
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <section class="hero-bg h-screen flex items-center relative text-white">
+        <div class="max-w-7xl mx-auto px-6 pt-20">
+            <div class="max-w-3xl" data-aos="fade-up">
+                <div class="inline-flex items-center gap-x-2 bg-white/20 backdrop-blur-md px-5 py-2 rounded-3xl text-sm mb-6">
+                    <div class="w-2 h-2 bg-emerald-400 rounded-full animate-pulse"></div>
+                    TRUSTED BY 10,000+ FAMILIES
+                </div>
+                
+                <h1 class="text-6xl md:text-7xl font-bold leading-none tracking-tighter mb-6">
+                    America's Most Trusted<br>Home Cleaning Service
+                </h1>
+                <p class="text-xl md:text-2xl text-white/90 max-w-lg mb-10">
+                    Professional, reliable, and affordable home cleaning services designed to give you more free time and a spotless home.
+                </p>
+                
+                <div class="flex flex-wrap gap-4">
+                    <button onclick="showBookingModal()" 
+                            class="px-10 py-5 bg-white text-zinc-900 hover:bg-white/90 rounded-3xl font-semibold text-lg flex items-center gap-x-3 transition-all active:scale-[0.97]">
+                        <span>Book Your Cleaning</span>
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+                    <button onclick="document.getElementById('booking-form').scrollIntoView({ behavior: 'smooth' })" 
+                            class="px-10 py-5 border-2 border-white/80 hover:bg-white/10 rounded-3xl font-semibold text-lg transition-all">
+                        Get Free Quote
+                    </button>
+                </div>
+                
+                <!-- Stats -->
+                <div class="mt-16 grid grid-cols-2 md:grid-cols-4 gap-8">
+                    <div class="text-center">
+                        <div id="stat1" class="stat-number text-5xl font-semibold">10000</div>
+                        <div class="text-sm tracking-widest uppercase mt-1 opacity-75">Homes Cleaned</div>
+                    </div>
+                    <div class="text-center">
+                        <div id="stat2" class="stat-number text-5xl font-semibold">4.9</div>
+                        <div class="text-sm tracking-widest uppercase mt-1 opacity-75">Avg Rating</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-5xl font-semibold">100<span class="text-3xl">%</span></div>
+                        <div class="text-sm tracking-widest uppercase mt-1 opacity-75">Satisfaction</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-5xl font-semibold">7</div>
+                        <div class="text-sm tracking-widest uppercase mt-1 opacity-75">Days a Week</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-y-2 text-sm">
+            <div class="animate-bounce">↓</div>
+            <span class="opacity-75">Scroll to explore</span>
+        </div>
+    </section>
+
+    <!-- WHY CHOOSE US -->
+    <section id="why" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <span class="px-4 py-2 bg-emerald-100 text-emerald-700 rounded-3xl text-sm font-medium">WHY SPARKLEHOME</span>
+                <h2 class="text-5xl font-bold mt-4 tracking-tight">The SparkleHome Difference</h2>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Card 1 -->
+                <div class="glass p-8 rounded-3xl" data-aos="fade-up" data-aos-delay="100">
+                    <div class="w-14 h-14 bg-sky-100 text-sky-600 rounded-2xl flex items-center justify-center text-3xl mb-8">🔍</div>
+                    <h3 class="font-semibold text-2xl mb-3">Professional Cleaners</h3>
+                    <p class="text-zinc-600">Background-checked and highly trained staff with years of experience delivering exceptional results.</p>
+                </div>
+                
+                <!-- Card 2 -->
+                <div class="glass p-8 rounded-3xl" data-aos="fade-up" data-aos-delay="200">
+                    <div class="w-14 h-14 bg-emerald-100 text-emerald-600 rounded-2xl flex items-center justify-center text-3xl mb-8">🌱</div>
+                    <h3 class="font-semibold text-2xl mb-3">Eco-Friendly Products</h3>
+                    <p class="text-zinc-600">Non-toxic, plant-based cleaners safe for children, pets, and our planet.</p>
+                </div>
+                
+                <!-- Card 3 -->
+                <div class="glass p-8 rounded-3xl" data-aos="fade-up" data-aos-delay="300">
+                    <div class="w-14 h-14 bg-amber-100 text-amber-600 rounded-2xl flex items-center justify-center text-3xl mb-8">💰</div>
+                    <h3 class="font-semibold text-2xl mb-3">Affordable Pricing</h3>
+                    <p class="text-zinc-600">Premium quality cleaning without the premium price tag. Transparent, no hidden fees.</p>
+                </div>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8 mt-8">
+                <div class="glass p-8 rounded-3xl" data-aos="fade-up" data-aos-delay="400">
+                    <div class="w-14 h-14 bg-purple-100 text-purple-600 rounded-2xl flex items-center justify-center text-3xl mb-8">📅</div>
+                    <h3 class="font-semibold text-2xl mb-3">Flexible Scheduling</h3>
+                    <p class="text-zinc-600">Daily, weekly, bi-weekly, or monthly options. Same-day availability in many areas.</p>
+                </div>
+                
+                <div class="glass p-8 rounded-3xl" data-aos="fade-up" data-aos-delay="500">
+                    <div class="w-14 h-14 bg-rose-100 text-rose-600 rounded-2xl flex items-center justify-center text-3xl mb-8">🛡️</div>
+                    <h3 class="font-semibold text-2xl mb-3">Fully Insured</h3>
+                    <p class="text-zinc-600">Your home and belongings are protected with comprehensive insurance coverage.</p>
+                </div>
+                
+                <div class="glass p-8 rounded-3xl" data-aos="fade-up" data-aos-delay="600">
+                    <div class="w-14 h-14 bg-teal-100 text-teal-600 rounded-2xl flex items-center justify-center text-3xl mb-8">⭐</div>
+                    <h3 class="font-semibold text-2xl mb-3">Satisfaction Guarantee</h3>
+                    <p class="text-zinc-600">If you're not completely satisfied, we'll return to re-clean your home at no extra charge.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section id="services" class="py-24 bg-gradient-to-br from-cyan-50 via-white to-emerald-50">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <span class="px-4 py-2 bg-sky-100 text-sky-700 rounded-3xl text-sm font-medium">OUR PACKAGES</span>
+                <h2 class="text-5xl font-bold mt-4 tracking-tight">Choose Your Perfect Clean</h2>
+                <p class="mt-4 text-lg text-zinc-600 max-w-md mx-auto">All packages include professional equipment, eco-friendly products, and a satisfaction guarantee.</p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Basic -->
+                <div class="service-card bg-white rounded-3xl overflow-hidden border border-zinc-100 h-full flex flex-col" data-aos="fade-up">
+                    <div class="h-2 bg-gradient-to-r from-cyan-400 via-blue-500 to-emerald-500"></div>
+                    <div class="p-8 flex-1 flex flex-col">
+                        <div class="uppercase tracking-widest text-xs font-medium text-zinc-500 mb-2">Starter</div>
+                        <div class="text-5xl font-bold mb-1">$99</div>
+                        <div class="text-sm text-zinc-500 mb-8">One-time basic clean</div>
+                        
+                        <ul class="space-y-4 mb-12 flex-1">
+                            <li class="flex items-start gap-x-3"><i class="fa-solid fa-check text-emerald-500 mt-1"></i> Dusting all surfaces</li>
+                            <li class="flex items-start gap-x-3"><i class="fa-solid fa-check text-emerald-500 mt-1"></i> Vacuuming &amp; mopping</li>
+                            <li class="flex items-start gap-x-3"><i class="fa-solid fa-check text-emerald-500 mt-1"></i> Bathroom sanitization</li>
+                            <li class="flex items-start gap-x-3"><i class="fa-solid fa-check text-emerald-500 mt-1"></i> Kitchen counters</li>
+                            <li class="flex items-start gap-x-3"><i class="fa-solid fa-check text-emerald-500 mt-1"></i> Trash removal</li>
+                        </ul>
+                        
+                        <button onclick="selectService(1)" 
+                                class="mt-auto w-full py-6 bg-zinc-900 hover:bg-black text-white rounded-3xl font-semibold transition-all">
+                            Book Basic Clean
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Deep - Most Popular -->
+                <div class="service-card bg-white rounded-3xl overflow-hidden border-2 border-emerald-500 relative h-full flex flex-col shadow-xl scale-105" data-aos="fade-up" data-aos-delay="100">
+                    <div class="absolute -top-5 right-6 bg-gradient-to-r from-orange-500 to-pink-600 text-white text-sm font-extrabold px-8 py-3 rounded-full shadow-2xl border-4 border-white z-50 animate-pulse">MOST POPULAR</div>
+                    <div class="h-2 bg-gradient-to-r from-emerald-400 via-green-500 to-cyan-500"></div>
+                    <div class="p-8 flex-1 flex flex-col">
+                        <div class="uppercase tracking-widest text-xs font-medium text-emerald-600 mb-2">Comprehensive</div>
+                        <div class="text-5xl font-bold mb-1">$199</div>
+                        <div class="text-sm text-emerald-600 mb-8">Recommended for regular homes</div>
+                        
+                        <ul class="space-y-4 mb-12 flex-1">
+                            <li class="flex items-start gap-x-3"><i class="fa-solid fa-check text-emerald-500 mt-1"></i> Everything in Basic</li>
+                            <li class="flex items-start gap-x-3"><i class="fa-solid fa-check text-emerald-500 mt-1"></i> Appliance exteriors</li>
+                            <li class="flex items-start gap-x-3"><i class="fa-solid fa-check text-emerald-500 mt-1"></i> Baseboards &amp; blinds</li>
+                            <li class="flex items-start gap-x-3"><i class="fa-solid fa-check text-emerald-500 mt-1"></i> Interior windows</li>
+                            <li class="flex items-start gap-x-3"><i class="fa-solid fa-check text-emerald-500 mt-1"></i> Deep bathroom clean</li>
+                        </ul>
+                        
+                        <button onclick="selectService(2)" 
+                                class="mt-auto w-full py-6 bg-emerald-600 hover:bg-emerald-700 text-white rounded-3xl font-semibold transition-all">
+                            Book Deep Clean
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Premium -->
+                <div class="service-card bg-white rounded-3xl overflow-hidden border border-zinc-100 h-full flex flex-col" data-aos="fade-up" data-aos-delay="200">
+                    <div class="h-2 bg-gradient-to-r from-purple-500 via-pink-500 to-orange-400"></div>
+                    <div class="p-8 flex-1 flex flex-col">
+                        <div class="uppercase tracking-widest text-xs font-medium text-violet-500 mb-2">Ultimate</div>
+                        <div class="text-5xl font-bold mb-1">$349</div>
+                        <div class="text-sm text-zinc-500 mb-8">Move-in / Move-out</div>
+                        
+                        <ul class="space-y-4 mb-12 flex-1">
+                            <li class="flex items-start gap-x-3"><i class="fa-solid fa-check text-emerald-500 mt-1"></i> Full deep cleaning</li>
+                            <li class="flex items-start gap-x-3"><i class="fa-solid fa-check text-emerald-500 mt-1"></i> Inside cabinets &amp; fridge</li>
+                            <li class="flex items-start gap-x-3"><i class="fa-solid fa-check text-emerald-500 mt-1"></i> Oven &amp; range hood</li>
+                            <li class="flex items-start gap-x-3"><i class="fa-solid fa-check text-emerald-500 mt-1"></i> Complete sanitization</li>
+                            <li class="flex items-start gap-x-3"><i class="fa-solid fa-check text-emerald-500 mt-1"></i> Property prep</li>
+                        </ul>
+                        
+                        <button onclick="selectService(3)" 
+                                class="mt-auto w-full py-6 bg-zinc-900 hover:bg-black text-white rounded-3xl font-semibold transition-all">
+                            Book Premium Clean
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROCESS -->
+    <section id="process" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-5xl font-bold tracking-tight">How SparkleHome Cleans</h2>
+                <p class="mt-3 text-zinc-600">Five simple steps to a sparkling home</p>
+            </div>
+            
+            <div class="grid md:grid-cols-5 gap-6">
+                <div class="text-center" data-aos="fade-up" data-aos-delay="100">
+                    <div class="w-20 h-20 mx-auto bg-sky-100 text-sky-600 rounded-3xl flex items-center justify-center text-4xl mb-6 shadow-inner">1</div>
+                    <div class="font-semibold">Book Online</div>
+                    <p class="text-sm text-zinc-500 mt-2">Choose service and date in under 60 seconds</p>
+                </div>
+                <div class="text-center" data-aos="fade-up" data-aos-delay="200">
+                    <div class="w-20 h-20 mx-auto bg-emerald-100 text-emerald-600 rounded-3xl flex items-center justify-center text-4xl mb-6 shadow-inner">2</div>
+                    <div class="font-semibold">Team Arrives</div>
+                    <p class="text-sm text-zinc-500 mt-2">Uniformed, vetted professionals on time</p>
+                </div>
+                <div class="text-center" data-aos="fade-up" data-aos-delay="300">
+                    <div class="w-20 h-20 mx-auto bg-violet-100 text-violet-600 rounded-3xl flex items-center justify-center text-4xl mb-6 shadow-inner">3</div>
+                    <div class="font-semibold">Expert Cleaning</div>
+                    <p class="text-sm text-zinc-500 mt-2">Systematic approach with top tools</p>
+                </div>
+                <div class="text-center" data-aos="fade-up" data-aos-delay="400">
+                    <div class="w-20 h-20 mx-auto bg-amber-100 text-amber-600 rounded-3xl flex items-center justify-center text-4xl mb-6 shadow-inner">4</div>
+                    <div class="font-semibold">Quality Check</div>
+                    <p class="text-sm text-zinc-500 mt-2">Manager performs final inspection</p>
+                </div>
+                <div class="text-center" data-aos="fade-up" data-aos-delay="500">
+                    <div class="w-20 h-20 mx-auto bg-teal-100 text-teal-600 rounded-3xl flex items-center justify-center text-4xl mb-6 shadow-inner">5</div>
+                    <div class="font-semibold">Enjoy!</div>
+                    <p class="text-sm text-zinc-500 mt-2">Relax in your refreshed home</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- BEFORE / AFTER -->
+    <section class="py-24 bg-zinc-900 text-white">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-12">
+                <h2 class="text-5xl font-bold">Real Transformations</h2>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- Living Room -->
+                <div class="before-after rounded-3xl overflow-hidden shadow-2xl" data-aos="fade-up">
+                    <div class="relative">
+                        <img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1200&q=80" alt="Living Room Before" class="w-full h-auto before-img">
+                        <img src="https://images.unsplash.com/photo-1484154218962-a197022b5858?auto=format&fit=crop&w=1200&q=80" alt="Living Room After" class="absolute top-0 left-0 w-full h-full after-img" style="clip-path: inset(0 50% 0 0);">
+                        <div class="slider" id="slider1"></div>
+                        <div class="absolute bottom-4 left-4 bg-black/60 px-4 py-1 rounded-3xl text-xs">Living Room</div>
+                    </div>
+                </div>
+                
+                <!-- Kitchen -->
+                <div class="before-after rounded-3xl overflow-hidden shadow-2xl" data-aos="fade-up" data-aos-delay="100">
+                    <div class="relative">
+                        <img src="https://images.unsplash.com/photo-1556911220-bff31c812dba?auto=format&fit=crop&w=1200&q=80" alt="Kitchen Before" class="w-full h-auto before-img">
+                        <img src="https://images.unsplash.com/photo-1565538810643-b5bdb714032a?auto=format&fit=crop&w=1200&q=80" alt="Kitchen After" class="absolute top-0 left-0 w-full h-full after-img" style="clip-path: inset(0 50% 0 0);">
+                        <div class="slider" id="slider2"></div>
+                        <div class="absolute bottom-4 left-4 bg-black/60 px-4 py-1 rounded-3xl text-xs">Kitchen</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section id="reviews" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-12" data-aos="fade-up">
+                <h2 class="text-5xl font-bold">Loved by Families Across America</h2>
+            </div>
+            
+            <div id="testimonial-carousel" class="relative overflow-hidden">
+                <div class="flex transition-transform duration-700 ease-in-out" id="slides">
+                    <!-- Testimonial 1 -->
+                    <div class="min-w-full px-4">
+                        <div class="max-w-lg mx-auto glass p-10 rounded-3xl">
+                            <div class="flex gap-x-1 text-amber-400 text-3xl mb-6">★★★★★</div>
+                            <p class="text-lg italic">"My house has never looked this clean. The team was punctual, professional, and left everything sparkling. I’ve already booked my next monthly service!"</p>
+                            <div class="mt-8 flex items-center gap-x-4">
+                                <img src="https://randomuser.me/api/portraits/women/44.jpg" class="w-12 h-12 rounded-2xl object-cover">
+                                <div>
+                                    <div class="font-semibold">Sarah Johnson</div>
+                                    <div class="text-sm text-zinc-500">New York, NY</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Testimonial 2 -->
+                    <div class="min-w-full px-4">
+                        <div class="max-w-lg mx-auto glass p-10 rounded-3xl">
+                            <div class="flex gap-x-1 text-amber-400 text-3xl mb-6">★★★★★</div>
+                            <p class="text-lg italic">"Professional team, affordable pricing, and amazing results. They even helped organize my pantry. Best decision I made this year."</p>
+                            <div class="mt-8 flex items-center gap-x-4">
+                                <img src="https://randomuser.me/api/portraits/men/32.jpg" class="w-12 h-12 rounded-2xl object-cover">
+                                <div>
+                                    <div class="font-semibold">Michael Brown</div>
+                                    <div class="text-sm text-zinc-500">Chicago, IL</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Testimonial 3 -->
+                    <div class="min-w-full px-4">
+                        <div class="max-w-lg mx-auto glass p-10 rounded-3xl">
+                            <div class="flex gap-x-1 text-amber-400 text-3xl mb-6">★★★★★</div>
+                            <p class="text-lg italic">"The deep cleaning package was worth every penny. My home feels brand new. Highly recommend for busy professionals."</p>
+                            <div class="mt-8 flex items-center gap-x-4">
+                                <img src="https://randomuser.me/api/portraits/women/68.jpg" class="w-12 h-12 rounded-2xl object-cover">
+                                <div>
+                                    <div class="font-semibold">Jennifer Wilson</div>
+                                    <div class="text-sm text-zinc-500">Los Angeles, CA</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="flex justify-center gap-x-4 mt-10">
+                <button onclick="prevSlide()" class="w-12 h-12 border border-zinc-300 hover:bg-zinc-100 rounded-2xl flex items-center justify-center"><i class="fa-solid fa-chevron-left"></i></button>
+                <button onclick="nextSlide()" class="w-12 h-12 border border-zinc-300 hover:bg-zinc-100 rounded-2xl flex items-center justify-center"><i class="fa-solid fa-chevron-right"></i></button>
+            </div>
+        </div>
+    </section>
+
+    <!-- BOOKING FORM -->
+    <section id="booking-form" class="py-24 bg-gradient-to-br from-sky-50 to-emerald-50">
+        <div class="max-w-2xl mx-auto px-6">
+            <div class="glass p-12 rounded-3xl shadow-2xl" data-aos="fade-up">
+                <h2 class="text-4xl font-bold text-center mb-2">Book Your Cleaning Today</h2>
+                <p class="text-center text-zinc-600 mb-10">Takes less than 2 minutes. Instant confirmation.</p>
+                
+                <form id="bookingForm" onsubmit="handleBooking(event)" class="space-y-6">
+                    <div class="grid grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-sm font-medium mb-2">Full Name</label>
+                            <input type="text" required class="w-full px-5 py-4 rounded-2xl border border-zinc-200 focus:outline-none focus:border-emerald-400">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium mb-2">Phone</label>
+                            <input type="tel" required class="w-full px-5 py-4 rounded-2xl border border-zinc-200 focus:outline-none focus:border-emerald-400">
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <label class="block text-sm font-medium mb-2">Email Address</label>
+                        <input type="email" required class="w-full px-5 py-4 rounded-2xl border border-zinc-200 focus:outline-none focus:border-emerald-400">
+                    </div>
+                    
+                    <div>
+                        <label class="block text-sm font-medium mb-2">Home Address</label>
+                        <input type="text" required class="w-full px-5 py-4 rounded-2xl border border-zinc-200 focus:outline-none focus:border-emerald-400">
+                    </div>
+                    
+                    <div class="grid grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-sm font-medium mb-2">Service Package</label>
+                            <select required class="w-full px-5 py-4 rounded-2xl border border-zinc-200 focus:outline-none focus:border-emerald-400">
+                                <option>Basic Home Cleaning - $99</option>
+                                <option>Deep Cleaning - $199</option>
+                                <option>Premium Move-In/Out - $349</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium mb-2">Preferred Date</label>
+                            <input type="date" required class="w-full px-5 py-4 rounded-2xl border border-zinc-200 focus:outline-none focus:border-emerald-400">
+                        </div>
+                    </div>
+                    
+                    <div class="grid grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-sm font-medium mb-2"># Bedrooms</label>
+                            <input type="number" min="1" value="2" class="w-full px-5 py-4 rounded-2xl border border-zinc-200 focus:outline-none focus:border-emerald-400">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium mb-2"># Bathrooms</label>
+                            <input type="number" min="1" value="2" class="w-full px-5 py-4 rounded-2xl border border-zinc-200 focus:outline-none focus:border-emerald-400">
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <label class="block text-sm font-medium mb-2">Additional Notes / Special Requests</label>
+                        <textarea class="w-full px-5 py-4 rounded-3xl border border-zinc-200 focus:outline-none focus:border-emerald-400 h-28 resize-y" placeholder="Allergies, pets, access instructions..."></textarea>
+                    </div>
+                    
+                    <button type="submit" 
+                            class="w-full py-6 bg-gradient-to-r from-emerald-500 to-teal-500 hover:brightness-110 text-white font-semibold text-xl rounded-3xl transition-all active:scale-[0.985]">
+                        Schedule My Cleaning — Confirm Now
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICE AREAS -->
+    <section id="areas" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid md:grid-cols-12 gap-12 items-center">
+                <div class="md:col-span-5" data-aos="fade-right">
+                    <h2 class="text-5xl font-bold leading-none tracking-tighter">Serving Major Cities Nationwide</h2>
+                    <p class="mt-6 text-zinc-600">Fast response times and experienced local teams in every location.</p>
+                    
+                    <div class="mt-10 flex flex-wrap gap-3">
+                        <div class="px-6 py-3 bg-zinc-100 rounded-3xl text-sm font-medium">New York</div>
+                        <div class="px-6 py-3 bg-zinc-100 rounded-3xl text-sm font-medium">Los Angeles</div>
+                        <div class="px-6 py-3 bg-zinc-100 rounded-3xl text-sm font-medium">Chicago</div>
+                        <div class="px-6 py-3 bg-zinc-100 rounded-3xl text-sm font-medium">Houston</div>
+                        <div class="px-6 py-3 bg-zinc-100 rounded-3xl text-sm font-medium">Miami</div>
+                        <div class="px-6 py-3 bg-zinc-100 rounded-3xl text-sm font-medium">Dallas</div>
+                        <div class="px-6 py-3 bg-zinc-100 rounded-3xl text-sm font-medium">Atlanta</div>
+                    </div>
+                </div>
+                
+                <div class="md:col-span-7 h-96 bg-zinc-200 rounded-3xl overflow-hidden relative" data-aos="fade-left">
+                    <!-- Placeholder for map -->
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d387193.305944!2d-74.259865!3d40.697149!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c24fa5d33f083b%3A0xc80b8f06e177fe62!2sNew%20York%2C%20NY%2C%20USA!5e0!3m2!1sen!2sus!4v1690000000000" 
+                            width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent flex items-end p-8">
+                        <div class="text-white">
+                            <div class="text-2xl font-semibold">Expanding to more cities monthly</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="py-24 bg-zinc-100">
+        <div class="max-w-4xl mx-auto px-6">
+            <h2 class="text-center text-5xl font-bold mb-16">Frequently Asked Questions</h2>
+            
+            <div class="space-y-4">
+                <details class="group bg-white rounded-3xl p-8 cursor-pointer">
+                    <summary class="flex justify-between items-center text-lg font-medium">
+                        <span>How long does a typical cleaning take?</span>
+                        <span class="text-2xl transition-transform group-open:rotate-45">+</span>
+                    </summary>
+                    <p class="mt-6 text-zinc-600">Typically 2-5 hours depending on home size and chosen package. We always communicate expected duration upfront.</p>
+                </details>
+                
+                <details class="group bg-white rounded-3xl p-8 cursor-pointer">
+                    <summary class="flex justify-between items-center text-lg font-medium">
+                        <span>Are cleaning supplies included?</span>
+                        <span class="text-2xl transition-transform group-open:rotate-45">+</span>
+                    </summary>
+                    <p class="mt-6 text-zinc-600">Yes. We bring professional-grade, eco-friendly products and all necessary equipment.</p>
+                </details>
+                
+                <details class="group bg-white rounded-3xl p-8 cursor-pointer">
+                    <summary class="flex justify-between items-center text-lg font-medium">
+                        <span>Are your cleaners insured and background checked?</span>
+                        <span class="text-2xl transition-transform group-open:rotate-45">+</span>
+                    </summary>
+                    <p class="mt-6 text-zinc-600">Absolutely. Every cleaner undergoes thorough background screening and we maintain comprehensive liability insurance.</p>
+                </details>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="text-white">
+        <div class="max-w-7xl mx-auto px-6 pt-20">
+            <div class="grid md:grid-cols-12 gap-y-16">
+                <div class="md:col-span-5">
+                    <div class="flex items-center gap-x-3 mb-6">
+                        <div class="w-10 h-10 bg-gradient-to-br from-sky-400 to-emerald-500 rounded-2xl flex items-center justify-center text-3xl">✦</div>
+                        <span class="font-bold text-4xl tracking-tighter">SparkleHome</span>
+                    </div>
+                    <p class="max-w-xs text-white/70">Premium residential cleaning that gives you back your weekends.</p>
+                    
+                    <div class="flex gap-x-6 mt-10">
+                        <a href="#" class="hover:text-emerald-400 transition-colors"><i class="fa-brands fa-facebook-f text-2xl"></i></a>
+                        <a href="#" class="hover:text-emerald-400 transition-colors"><i class="fa-brands fa-instagram text-2xl"></i></a>
+                        <a href="#" class="hover:text-emerald-400 transition-colors"><i class="fa-brands fa-linkedin text-2xl"></i></a>
+                        <a href="#" class="hover:text-emerald-400 transition-colors"><i class="fa-brands fa-x-twitter text-2xl"></i></a>
+                    </div>
+                </div>
+                
+                <div class="md:col-span-2">
+                    <div class="uppercase text-xs tracking-widest mb-6 text-white/60">Company</div>
+                    <div class="space-y-4 text-sm">
+                        <div>About Us</div>
+                        <div>Careers</div>
+                        <div>Blog</div>
+                    </div>
+                </div>
+                
+                <div class="md:col-span-2">
+                    <div class="uppercase text-xs tracking-widest mb-6 text-white/60">Services</div>
+                    <div class="space-y-4 text-sm">
+                        <div>Basic Cleaning</div>
+                        <div>Deep Cleaning</div>
+                        <div>Move In / Out</div>
+                    </div>
+                </div>
+                
+                <div class="md:col-span-3">
+                    <div class="uppercase text-xs tracking-widest mb-6 text-white/60">Contact</div>
+                    <div class="space-y-3">
+                        <a href="tel:8005551234" class="block hover:text-emerald-400">(800) 555-1234</a>
+                        <a href="mailto:info@sparklehomecleaning.com" class="block hover:text-emerald-400">info@sparklehomecleaning.com</a>
+                        <div>123 Sparkle Lane<br>New York, NY 10001</div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Trust Banner -->
+            <div class="mt-20 py-8 border-t border-white/10 flex flex-wrap justify-center gap-x-12 gap-y-4 text-sm text-white/70">
+                <div class="flex items-center gap-x-3"><i class="fa-solid fa-shield-halved"></i> Licensed &amp; Insured</div>
+                <div class="flex items-center gap-x-3"><i class="fa-solid fa-leaf"></i> Eco-Friendly</div>
+                <div class="flex items-center gap-x-3"><i class="fa-solid fa-users"></i> Background Checked</div>
+                <div class="flex items-center gap-x-3"><i class="fa-solid fa-award"></i> 100% Satisfaction</div>
+            </div>
+            
+            <div class="pt-12 pb-8 border-t border-white/10 text-center text-xs text-white/50 flex flex-col md:flex-row justify-between items-center gap-y-4">
+                <div>© 2026 SparkleHome Cleaning Services. All rights reserved.</div>
+                <div class="flex gap-x-8">
+                    <a href="#" class="hover:text-white">Privacy</a>
+                    <a href="#" class="hover:text-white">Terms</a>
+                </div>
+                <button onclick="window.scrollTo({top: 0, behavior: 'smooth'})" class="flex items-center gap-x-2 hover:text-emerald-400">
+                    Back to top <span class="text-xl">↑</span>
+                </button>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating Book Button -->
+    <button onclick="showBookingModal()" 
+            class="fixed bottom-8 right-8 bg-emerald-600 hover:bg-emerald-700 text-white w-16 h-16 rounded-full shadow-2xl flex items-center justify-center text-3xl z-50 md:hidden">
+        📅
+    </button>
+
+    <!-- Booking Modal -->
+    <div id="booking-modal" class="hidden fixed inset-0 bg-black/70 z-[100] flex items-center justify-center p-4">
+        <div class="bg-white rounded-3xl max-w-lg w-full max-h-[90vh] overflow-auto">
+            <div class="p-8">
+                <div class="flex justify-between items-center mb-8">
+                    <h3 class="text-3xl font-semibold">Instant Booking</h3>
+                    <button onclick="hideBookingModal()" class="text-4xl leading-none text-zinc-300 hover:text-zinc-400">×</button>
+                </div>
+                <!-- Reuse the form content or simplify -->
+                <form onsubmit="handleBooking(event)" class="space-y-6">
+                    <!-- Same fields as above, abbreviated -->
+                    <input type="text" placeholder="Full Name" required class="w-full px-6 py-5 border rounded-2xl">
+                    <input type="tel" placeholder="Phone Number" required class="w-full px-6 py-5 border rounded-2xl">
+                    <button type="submit" class="w-full py-6 bg-emerald-600 text-white text-xl font-semibold rounded-3xl">Confirm Booking</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 800,
+            once: true
+        });
+        
+        // Tailwind script already loaded via CDN
+        
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        }
+        
+        // Animated counters
+        
+function animateCounters() {
+    const stat1 = document.getElementById('stat1');
+    const stat2 = document.getElementById('stat2');
+
+    let homes = 0;
+    const homesTarget = 10000;
+
+    const homesTimer = setInterval(() => {
+        homes += 125;
+        if(homes >= homesTarget){
+            homes = homesTarget;
+            clearInterval(homesTimer);
+        }
+        stat1.textContent = homes.toLocaleString();
+    }, 20);
+
+    stat2.textContent = "4.9";
+}
+
+// Trigger counters when scrolled into view
+
+        let countersStarted = false;
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 400 && !countersStarted) {
+                countersStarted = true;
+                animateCounters();
+            }
+        });
+        
+        // Testimonial carousel
+        let currentSlide = 0;
+        const totalSlides = 3;
+        
+        function updateCarousel() {
+            const slidesContainer = document.getElementById('slides');
+            slidesContainer.style.transform = `translateX(-${currentSlide * 100}%)`;
+        }
+        
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % totalSlides;
+            updateCarousel();
+        }
+        
+        function prevSlide() {
+            currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+            updateCarousel();
+        }
+        
+        // Auto slide
+        setInterval(() => {
+            nextSlide();
+        }, 6000);
+        
+        // Before / After sliders
+        function initSliders() {
+            const sliders = document.querySelectorAll('.slider');
+            sliders.forEach((slider, index) => {
+                let isDragging = false;
+                
+                function moveSlider(e) {
+                    if (!isDragging) return;
+                    const rect = slider.parentElement.getBoundingClientRect();
+                    let x = e.clientX || (e.touches && e.touches[0].clientX);
+                    let percent = ((x - rect.left) / rect.width) * 100;
+                    percent = Math.max(5, Math.min(95, percent));
+                    slider.style.left = `${percent}%`;
+                    slider.nextElementSibling.style.clipPath = `inset(0 ${100 - percent}% 0 0)`;
+                }
+                
+                slider.addEventListener('mousedown', () => isDragging = true);
+                document.addEventListener('mouseup', () => isDragging = false);
+                document.addEventListener('mousemove', moveSlider);
+                
+                // Touch support
+                slider.addEventListener('touchstart', () => isDragging = true);
+                document.addEventListener('touchend', () => isDragging = false);
+                document.addEventListener('touchmove', moveSlider);
+            });
+        }
+        
+        // Booking handlers
+        function showBookingModal() {
+            document.getElementById('booking-modal').classList.remove('hidden');
+            document.getElementById('booking-modal').classList.add('flex');
+        }
+        
+        function hideBookingModal() {
+            const modal = document.getElementById('booking-modal');
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+        }
+        
+        function handleBooking(e) {
+            e.preventDefault();
+            alert("🎉 Booking request received! Our team will confirm within minutes.");
+            hideBookingModal();
+        }
+        
+        function selectService(n) {
+            showBookingModal();
+            // Could prefill form in future
+        }
+        
+        // Keyboard shortcuts
+        document.addEventListener('keydown', function(e) {
+            if (e.key === "/" && document.getElementById('booking-modal').classList.contains('hidden')) {
+                showBookingModal();
+            }
+        });
+        
+        // Initialize everything
+        window.onload = function() {
+            initSliders();
+            // Preload images or other optimizations
+            console.log('%cSparkleHome Website Ready ✨', 'color:#10b981; font-family:monospace');
+        };
+        
+        // Live chat simulation (demo)
+        setTimeout(() => {
+            if (Math.random() > 0.6) {
+                console.log("💬 Live chat would open here in production");
+            }
+        }, 8000);
+    </script>
+</body>
+</html>
